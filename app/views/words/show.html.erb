@@ -1,0 +1,22 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    <%= @word.title %>
+  </h1>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <p><%= @word.description %></p>
+      <% if @word.attachment? %>
+        <img src="<%= @word.attachment_url %>" alt="<%= @word.title %>" style="width: 100%;" />
+        <%= link_to "Download Image", @word.attachment_url %>
+      <% end %>
+      <p><%= link_to 'back', words_path %></p>
+    </div> <!-- /.col-md-12 -->
+  </div>   <!-- /.row -->
+</section><!-- /.content -->

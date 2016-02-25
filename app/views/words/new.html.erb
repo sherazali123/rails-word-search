@@ -1,0 +1,24 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    New Word
+    <small><%= link_to 'Back', words_path %></small>
+  </h1>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+      <!-- general form elements -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Add details</h3>
+        </div><!-- /.box-header -->
+        <%= render partial: "form", locals: {word: @word} %>
+      </div><!-- /.box -->
+    </div><!--/.col (left) -->
+  </div>   <!-- /.row -->
+</section><!-- /.content -->

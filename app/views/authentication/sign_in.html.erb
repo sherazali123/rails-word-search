@@ -1,0 +1,33 @@
+
+<div class="login-box">
+  <div class="login-logo">
+    <b>Tibetan</b>Encyclopedia
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+    <%= form_for @user, :as => :user, :url => sign_in_path do |f| %>
+      <div class="form-group has-feedback">
+        <%= f.text_field :username, :class => 'form-control', :placeholder => 'Email' %>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <%= f.check_box :remember_me %> &nbsp;Remember me
+            </label>
+          </div>
+        </div><!-- /.col -->
+        <div class="col-xs-4">
+
+          <%= f.submit 'Sign In', :class => 'btn btn-primary btn-block btn-flat' %>
+        </div><!-- /.col -->
+      </div>
+    <% end %>
+
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
