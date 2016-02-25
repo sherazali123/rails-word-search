@@ -28,7 +28,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem 'carrierwave', '~> 0.10.0'
 
 # Use rmagick to process image
-gem 'rmagick', '~> 2.15.4', '>= 2.15.4'
+# gem 'rmagick', '~> 2.15.4', '>= 2.15.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
