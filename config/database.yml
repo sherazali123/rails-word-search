@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
+  host: 162.243.250.183
   database: word_search_development
   username: root
   password: root
