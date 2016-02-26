@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: word_search_production
-  username: word_search
-  password: <%= ENV['WORD_SEARCH_DATABASE_PASSWORD'] %>
+  database: word_search_development
+  username: root
+  password: root
