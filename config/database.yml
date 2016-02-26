@@ -50,7 +50,7 @@ test:
 #
 production:
   <<: *default
-  host: 162.243.250.183
+  socket: /var/run/mysqld/mysql.sock
   database: word_search_development
   username: root
   password: root
