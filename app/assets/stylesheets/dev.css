@@ -1,3 +1,20 @@
 .field_with_errors input, .field_with_errors textarea {
   border: 1px solid red;
 }
+.skin-red-light .main-header .logo {
+    background-color: rgba(192,0,0,1);
+}
+.skin-red-light .main-header .navbar {
+    background-color: rgba(192,0,0,1);
+}
+
+.logo-lg img {
+  margin-top: -5px;
+}
+/*.logo-simple img {
+  margin-top: -9px;
+}*/
+.main-header .logo {
+    font-size: 13px;
+    font-weight: 400;
+}
