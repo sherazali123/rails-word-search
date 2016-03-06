@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 8) do
+ActiveRecord::Schema.define(version: 9) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               limit: 255
@@ -26,13 +26,23 @@ ActiveRecord::Schema.define(version: 8) do
     t.boolean  "is_admin"
   end
 
+  create_table "volumes", force: :cascade do |t|
+    t.integer  "no",         limit: 4
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "words", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
+    t.integer  "volumes_id",  limit: 4
     t.boolean  "active"
     t.string   "attachment",  limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "words", ["volumes_id"], name: "index_words_on_volumes_id", using: :btree
 
 end

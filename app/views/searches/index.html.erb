@@ -1,0 +1,14 @@
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box" style="padding: 26px 20px 40px 20px;">
+        <ul>
+          <% @volumes.each do |volume| %>
+            <li><a href="/searches/v?v=<%= volume.no %>">Volume <%= volume.no %>: <%= volume.title %></a></li>
+          <% end %>
+        </ul>
+      </div><!-- /.box -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section><!-- /.content -->

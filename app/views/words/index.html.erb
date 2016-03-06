@@ -20,6 +20,7 @@
               <tr>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Volume</th>
                 <th>Active</th>
                 <th>Actions</th>
               </tr>
@@ -29,6 +30,11 @@
                 <tr>
                   <td><%= word.title %></td>
                   <td><%= word.description.truncate(50) %></td>
+                  <td>
+                    <% if !word.volumes.blank? %>
+                        <%= word.volumes.title %>
+                    <% end %>
+                  </td>
                   <th>
                     <% if word.active? %>
                       Yes
@@ -46,14 +52,6 @@
                 </tr>
               <% end %>
             </tbody>
-            <tfoot>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Active</th>
-                <th>Actions</th>
-              </tr>
-            </tfoot>
           </table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->

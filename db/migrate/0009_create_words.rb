@@ -3,9 +3,10 @@ class CreateWords < ActiveRecord::Migration
     create_table :words do |t|
       t.string :title
       t.text :description
+      t.belongs_to :volumes, index: true
       t.boolean :active
       t.string :attachment
-      
+
       t.timestamps null: false
     end
   end

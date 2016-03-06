@@ -3,7 +3,11 @@ class WordsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @words = Word.all
+    @q = '';
+    if !params[:q].blank?
+      @q = params[:q]
+    end
+    @words = Word.search(@q)
   end
 
   def show
@@ -18,7 +22,12 @@ class WordsController < ApplicationController
     @word = Word.new(params_word)
     if @word.save
         flash[:notice] = "Success Add Records"
-        redirect_to action: 'index'
+        if params[:commit] == 'Submit'
+          redirect_to action: 'index'
+        else
+          redirect_to action: 'new'
+        end
+
     else
         flash[:error] = "Invalid data."
         render 'new'
@@ -53,7 +62,7 @@ class WordsController < ApplicationController
 
   private
     def params_word
-        params.require(:word).permit(:title, :description, :active, :attachment)
+        params.require(:word).permit(:title, :description, :volumes_id, :active, :attachment)
     end
 
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'searches' => "searches#index"
+  get 'searches/v' => "searches#volume"
 
   get "searches/:id" => "searches#show"
 
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :words
 
-  root :to => "authentication#sign_in"
+  root :to => "searches#index"
 
   get "signed_out" => "authentication#signed_out"
   # get "forgot_password" => "authentication#forgot_password"

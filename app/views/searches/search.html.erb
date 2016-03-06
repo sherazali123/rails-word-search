@@ -12,38 +12,16 @@
               <tr>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Active</th>
-                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <% @words.each do |word| %>
                 <tr>
-                  <td><%= word.title %></td>
+                  <td><%= link_to word.title, controller: "searches", action: "show", id: word %></td>
                   <td><%= word.description.truncate(50) %></td>
-                  <th>
-                    <% if word.active? %>
-                      Yes
-                    <% else %>
-                      No
-                    <% end %>
-                  </th>
-                  <td>
-                    <span><%= link_to "view", controller: "searches", action: "show", id: word %><span>
-                    <!-- <span> | </span>
-                    <span><%= link_to 'delete', word_path(word.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span> -->
-                  </td>
                 </tr>
               <% end %>
             </tbody>
-            <tfoot>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Active</th>
-                <th>Actions</th>
-              </tr>
-            </tfoot>
           </table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->

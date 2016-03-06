@@ -43,36 +43,39 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-              <!-- <form class="navbar-form navbar-left" role="search"> -->
                 <%= form_tag("/searches", method: "post", class: "navbar-form navbar-left") do %>
-                <div class="input-group input-group-sm">
-                    <!-- <input type="text" class="form-control"> -->
-                     <%= text_field_tag(:q, @q,class: "form-control") %>
-                    <span class="input-group-btn">
-                      <!-- <button class="btn btn-info btn-flat" type="button">Go!</button> -->
-                      <%= submit_tag("Go!", class: "btn btn-info btn-flat") %>
-                    </span>
+                  <div class="input-group input-group-sm">
+                       <%= text_field_tag(:q, @q,class: "form-control") %>
+                       <%= hidden_field_tag "v", @v %>
+                      <span class="input-group-btn">
+                        <%= submit_tag("Go!", class: "btn btn-info btn-flat") %>
+                      </span>
                   </div>
-              <!-- </form> -->
-              <% end %>
+                  <% end %>
             </div><!-- /.navbar-collapse -->
             <!-- Navbar Right Menu -->
               <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                   <!-- User Account: style can be found in dropdown.less -->
-                  <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" style="height: 50px;" data-toggle="dropdown">
-                      <span class="hidden-xs"><%= current_user.username %></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <!-- Menu Footer-->
-                      <li class="user-footer">
-                        <div class="pull-right">
-                          <%= link_to "Sign out", :signed_out, :class => 'btn btn-default btn-flat' %>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                  <% if !current_user.blank? %>
+                    <li class="dropdown user user-menu">
+                      <a href="#" class="dropdown-toggle" style="height: 50px;" data-toggle="dropdown">
+                        <span class="hidden-xs"><%= current_user.username %></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                          <div class="pull-right">
+                            <%= link_to "Sign out", :signed_out, :class => 'btn btn-default btn-flat' %>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  <% else %>
+                  <a href="/sign_in" class="btn btn-default" style="margin-top: 8px;">
+                    <span class="hidden-xs"> Login </span>
+                  </a>
+                  <% end %>
                 </ul>
               </div><!-- /.navbar-custom-menu -->
           </div><!-- /.container-fluid -->

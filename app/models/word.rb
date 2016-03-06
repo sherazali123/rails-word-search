@@ -13,9 +13,13 @@ class Word < ActiveRecord::Base
     errors.add(:active, "must be one.") if :active.blank?
   end
 
+  belongs_to :volumes, :class_name => "Volume"
+
   # default_scope {where(active: true)}
   scope :status_active, -> {where(active: true)}
 
   scope :search, -> (q) { where("title like ?", "#{q}%")}
+
+  scope :search_by_volume, -> (v) { where(volumes_id: v)}
 
 end

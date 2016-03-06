@@ -1,19 +1,42 @@
 class SearchesController < ApplicationController
 
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   layout "search"
 
   def index
     @q = ''
+    @volumes = Volume.all.order(:id)
+  end
+
+  def volume
+    @v = params[:v]
+
+    if @v.blank?
+      @words = []
+    else
+      @words = Word.search_by_volume(@v)
+    end
+
+    render "search"
   end
 
   def search
     @q = params[:q]
-    if @q.blank?
-      @words = []
+    @v = params[:v]
+
+    if @v.blank?
+      if @q.blank?
+        @words = []
+      else
+        @words = Word.search(@q)
+      end
     else
-      @words = Word.search(@q)
+      if @q.blank?
+        @words = []
+      else
+        @words = Word.search_by_volume(@v).search(@q)
+      end
     end
 
   end
