@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
     if @v.blank?
       @words = []
     else
-      @words = Word.search_by_volume(@v)
+      @words = Word.active.search_by_volume(@v)
     end
 
     render "search"
@@ -29,13 +29,13 @@ class SearchesController < ApplicationController
       if @q.blank?
         @words = []
       else
-        @words = Word.search(@q)
+        @words = Word.active.search(@q)
       end
     else
       if @q.blank?
         @words = []
       else
-        @words = Word.search_by_volume(@v).search(@q)
+        @words = Word.active.search_by_volume(@v).search(@q)
       end
     end
 

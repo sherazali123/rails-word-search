@@ -16,9 +16,9 @@ class Word < ActiveRecord::Base
   belongs_to :volumes, :class_name => "Volume"
 
   # default_scope {where(active: true)}
-  scope :status_active, -> {where(active: true)}
+  scope :active, -> {where(active: true)}
 
-  scope :search, -> (q) { where("title like ?", "#{q}%")}
+  scope :search, -> (q) { where("title like ? OR description like ?", "%#{q}%", "%#{q}%")}
 
   scope :search_by_volume, -> (v) { where(volumes_id: v)}
 

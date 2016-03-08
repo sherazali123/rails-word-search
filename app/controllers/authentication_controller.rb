@@ -43,6 +43,7 @@ class AuthenticationController < ApplicationController
       update_authentication_token(user, nil)
       user.save
       session[:user_id] = nil
+      redirect_to :root
     else
       redirect_to :sign_in
     end
