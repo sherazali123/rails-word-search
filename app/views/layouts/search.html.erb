@@ -29,21 +29,20 @@
 
       <header class="main-header">
         <nav class="navbar navbar-static-top">
-          <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
+              <div class="row">
+
+            <div class="col-md-4 col-sm-4 col-xs-4">
               <a href="/words" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><img src="<%= image_url('logo_red.jpeg') %>" alt=""/></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><img src="<%= image_url('logo_red.jpeg') %>" alt=""/> &nbsp;<b>Tibetan</b>Encyclopedia</span>
+                <span class="logo-lg"><img src="<%= image_url('logo_red.jpeg') %>" alt=""/> &nbsp;<b>Tibetan</b>Encyclopedia</span>  
               </a>
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <i class="fa fa-bars"></i>
-              </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                <%= form_tag("/searches", method: "post", class: "navbar-form navbar-left") do %>
+
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <%= form_tag("/searches", method: "post", class: "navbar-form") do %>
                   <div class="input-group input-group-sm">
                        <%= text_field_tag(:q, @q,class: "form-control") %>
                        <%= hidden_field_tag "v", @v %>
@@ -52,33 +51,18 @@
                       </span>
                   </div>
                   <% end %>
-            </div><!-- /.navbar-collapse -->
-            <!-- Navbar Right Menu -->
-              <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
+            </div>
+           
+            <div class="col-md-4 col-sm-4 col-xs-4">
                   <!-- User Account: style can be found in dropdown.less -->
-                  <% if !current_user.blank? %>
-                    <li class="dropdown user user-menu">
-                      <a href="#" class="dropdown-toggle" style="height: 50px;" data-toggle="dropdown">
-                        <span class="hidden-xs"><%= current_user.username %></span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                          <div class="pull-right">
-                            <%= link_to "Sign out", :signed_out, :class => 'btn btn-default btn-flat' %>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  <% else %>
-                  <a href="/sign_in" class="btn btn-default" style="margin-top: 8px;">
-                    <span class="hidden-xs"> Login </span>
-                  </a>
-                  <% end %>
-                </ul>
-              </div><!-- /.navbar-custom-menu -->
-          </div><!-- /.container-fluid -->
+                  <a href="/sign_in" class="btn btn-default" style="margin-top: 8px; float:right;">Login</a>
+            </div>
+
+            </div> <!-- Row Ends !-->
+            </div>
+            </div>
+              
+          
         </nav>
       </header>
       <!-- Full Width Column -->
