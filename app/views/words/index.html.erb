@@ -1,8 +1,22 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
+
+<div class="row">
+  <div class="col-xs-12">
+        <%= form_tag("/words", method: "get", class: "") do %>
+                        <div class="input-group input-group-sm">
+                               <%= text_field_tag(:q, @q,class: "form-control") %>
+                               <span class="input-group-btn">
+                                <%= submit_tag("འཚོལ་བཤེར།", class: "btn btn-info btn-flat") %>
+                               </span>
+                          </div>
+        <% end %>
+  </div>
+</div>
+
   <h1>
-    Words
-    <small><%= link_to 'Add', new_word_path %></small>
+    ཚིག
+    <small><%= link_to 'སྣོན་སྤེལ།', new_word_path %></small>
   </h1>
 </section>
 
@@ -18,11 +32,11 @@
           <table id="example2" class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Volume</th>
-                <th>Active</th>
-                <th>Actions</th>
+                <th>མིང་།</th>
+                <th>འགྲེལ་བཤད།</th>
+                <th>གླེགས་བམ།</th>
+                <th>མངོན་སྟོན།</th>
+                <th>ལག་བསྟར།</th>
               </tr>
             </thead>
             <tbody>
@@ -37,15 +51,15 @@
                   </td>
                   <th>
                     <% if word.active? %>
-                      Yes
+                      ཡིན།
                     <% else %>
-                      No
+                      མིན།
                     <% end %>
                   </th>
                   <td>
-                    <span><%= link_to 'view', word_path(word.id) %><span>
+                    <span><%= link_to 'ངོ་གདོང་།', word_path(word.id) %><span>
                     <span> | </span>
-                    <span><%= link_to 'edit', edit_word_path(word.id) %><span>
+                    <span><%= link_to 'རྩོམ་སྒྲིག', edit_word_path(word.id) %><span>
                     <!-- <span> | </span>
                     <span><%= link_to 'delete', word_path(word.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span> -->
                   </td>

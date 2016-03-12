@@ -33,38 +33,39 @@
             <div class="navbar-header">
               <div class="row">
 
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="/words" class="logo">
-                <span class="logo-mini"><img src="<%= image_url('logo_red.jpeg') %>" alt=""/></span>
+            <div class="col-md-8 col-sm-6 col-xs-8">
+              <a href="." class="logo" style="float:left;" >
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><img src="<%= image_url('logo_red.jpeg') %>" alt=""/> &nbsp;<b>Tibetan</b>Encyclopedia</span>  
+                <span class="logo-lg"><img src="<%= image_url('logo_red.png') %>" alt="" height="42" width="42"/> &nbsp;<b>གངས་ཅན་ཤེས་རིག་བང་མཛོད།</b></span>
               </a>
             </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <%= form_tag("/searches", method: "post", class: "navbar-form") do %>
-                  <div class="input-group input-group-sm">
-                       <%= text_field_tag(:q, @q,class: "form-control") %>
-                       <%= hidden_field_tag "v", @v %>
-                      <span class="input-group-btn">
-                        <%= submit_tag("Go!", class: "btn btn-info btn-flat") %>
-                      </span>
-                  </div>
-                  <% end %>
-            </div>
-           
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                  <!-- User Account: style can be found in dropdown.less -->
-                  <a href="/sign_in" class="btn btn-default" style="margin-top: 8px; float:right;">Login</a>
-            </div>
 
+            <div class="col-md-4 col-sm-6 col-xs-4">
+                  <!-- User Account: style can be found in dropdown.less -->
+                  <a href="/sign_in" class="btn" style="margin-top: 8px; float:right; color:white;">ནང་འཛུལ།</a>
+            </div>
             </div> <!-- Row Ends !-->
             </div>
             </div>
-              
-          
-        </nav>
+
+      </nav>
       </header>
+
+      <div class="col-xs-8 col-xs-offset-2 col-md-offset-2 col-sm-offset-2">
+    <!--   <div class="col-md-12 col-sm-12 col-xs-12"> -->
+                <%= form_tag("/searches", method: "post", class: "") do %>
+                  <div class="input-group">
+                       <%= text_field_tag(:q, @q,class: "form-control") %>
+                       <%= hidden_field_tag "v", @v %>
+                      <span class="input-group-btn">
+                        <%= submit_tag("འཚོལ་བཤེར།", class: "btn btn-info btn-flat") %>
+                      </span>
+                  </div>
+                  <% end %>
+     <!--  </div> -->
+     </div>
+
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">

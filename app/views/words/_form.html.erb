@@ -3,12 +3,12 @@
 <%= form_for @word do |f| %>
   <div class="box-body">
     <div class="form-group">
-      <%= f.label :title %>
+      <%= f.label "ཁ་བྱང་།" %>
       <%= f.text_field :title, :class => 'form-control' %>
       <%= @word.errors[:title].first unless @word.errors[:title].blank? %>
     </div>
     <div class="form-group">
-      <%= f.label :description %>
+      <%= f.label "འགྲེལ་བཤད།" %>
       <%= f.text_area :description, :class => 'form-control', cols: 20, rows: 10 %>
       <%= @word.errors[:description].first unless @word.errors[:description].blank? %>
     </div>
@@ -18,16 +18,16 @@
       <%= @word.errors[:volumes_id].first unless @word.errors[:volumes_id].blank? %>
     </div>
     <div class="form-group">
-      <%= f.label :attachment %>
+      <%= f.label "ཡིག་ཆ་འཇུག་འགོད།" %>
       <%= f.file_field :attachment %>
-      <p class="help-block">Upload only image file.</p>
+      <p class="help-block">འདྲ་པར་འཇུག་འགོད།</p>
     </div>
     <div class="radio">
       <label>
         <%= f.radio_button :active, true %>
-        <%= label :active, 'Active' %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= label :active, 'མངོན་སྟོན།' %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <%= f.radio_button :active, false %>
-        <%= label :active, 'In-active' %>
+        <%= label :active, 'མངོན་སྟོན་མི་བྱེད།' %>
       </label>
     </div>
   </div><!-- /.box-body -->
