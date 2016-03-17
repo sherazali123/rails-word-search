@@ -11,6 +11,29 @@
 .logo-lg img {
   margin-top: -5px;
 }
+.logo-lg b {
+  font-size: 16px;
+}
+@media (max-width:500px) {
+  .logo-lg b {
+    font-size: 13px;
+  }
+}
+.desc {
+  font-size: 17px;
+}
+.previewImage {
+  max-width: 600px;
+}
+#sidebar-wrapper {
+    background: rgba(128, 128, 128, 0.2) !important;
+}
+.sidebar-nav li a {
+    color: #000000 !important;
+}
+.dataTables_info {
+  display: none;
+}
 /*.logo-simple img {
   margin-top: -9px;
 }*/

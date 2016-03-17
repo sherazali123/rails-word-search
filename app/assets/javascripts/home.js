@@ -8,5 +8,13 @@ $('#example2').DataTable({
           "searching": false,
           "ordering": true,
           "info": true,
-          "autoWidth": false
+          "autoWidth": false,
+          "oLanguage": {
+            "oPaginate": {
+            "sFirst": "<<", // This is the link to the first page
+            "sPrevious": "སྔོན་མ།", // This is the link to the previous page
+            "sNext": "རྗེས་མ།", // This is the link to the next page
+            "sLast": ">>", // This is the link to the last page
+            }
+          }
 });

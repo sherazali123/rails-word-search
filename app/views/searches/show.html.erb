@@ -2,9 +2,10 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <p><%= @word.description %></p>
+      <p class="desc"><%= @word.description %></p>
       <% if @word.attachment? %>
-        <img src="<%= @word.attachment_url %>" alt="<%= @word.title %>" style="width: 100%;" />
+        <img class="previewImage" src="<%= @word.attachment_url %>" alt="<%= @word.title %>" style="width: 100%;" />
+        <br />
         <%= link_to "Download Image", @word.attachment_url %>
       <% end %>
       <p><%= link_to 'back', words_path %></p>
