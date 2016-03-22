@@ -22,7 +22,7 @@ class WordsController < ApplicationController
     @word = Word.new(params_word)
     if @word.save
         flash[:notice] = "Success Add Records"
-        if params[:commit] == 'Submit'
+        if params[:commit] == 'གཏན་འཁེལ།' # གཏན་འཁེལ། => Submit
           redirect_to action: 'index'
         else
           redirect_to action: 'new'

@@ -13,7 +13,7 @@
       <%= @word.errors[:description].first unless @word.errors[:description].blank? %>
     </div>
     <div class="form-group">
-      <%= f.label :volumes_id %>
+      <%= f.label "གླེགས་བམ།" %>
       <%= f.collection_select :volumes_id, Volume.order(:id),:id,:title, {}, {:class => 'form-control'} %>
       <%= @word.errors[:volumes_id].first unless @word.errors[:volumes_id].blank? %>
     </div>
@@ -33,7 +33,7 @@
   </div><!-- /.box-body -->
 
   <div class="box-footer">
-    <%= f.submit :Submit, :class => 'btn btn-primary' %>
+    <%= f.submit "གཏན་འཁེལ།", :class => 'btn btn-primary' %>
     <% if @word.id.blank? %>
       <%= f.submit "Submit and continue", :class => 'btn btn-primary' %>
     <% end %>

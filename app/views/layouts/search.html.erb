@@ -52,22 +52,23 @@
       </nav>
       </header>
 
-      <div class="col-xs-8 col-xs-offset-2 col-md-offset-2 col-sm-offset-2">
-    <!--   <div class="col-md-12 col-sm-12 col-xs-12"> -->
-                <%= form_tag("/searches", method: "post", class: "") do %>
-                  <div class="input-group">
-                       <%= text_field_tag(:q, @q,class: "form-control") %>
-                       <%= hidden_field_tag "v", @v %>
-                      <span class="input-group-btn">
-                        <%= submit_tag("འཚོལ་བཤེར།", class: "btn btn-info btn-flat") %>
-                      </span>
-                  </div>
-                  <% end %>
-     <!--  </div> -->
-     </div>
+
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">
+          <div class="row" style="margin: 0;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                      <%= form_tag("/searches", method: "post", class: "") do %>
+                        <div class="input-group">
+                             <%= text_field_tag(:q, @q,class: "form-control") %>
+                             <%= hidden_field_tag "v", @v %>
+                            <span class="input-group-btn">
+                              <%= submit_tag("འཚོལ་བཤེར།", class: "btn btn-info btn-flat") %>
+                            </span>
+                        </div>
+                        <% end %>
+           </div>
+          </div>
           <%= yield %>
         </div><!-- /.container -->
       </div><!-- /.content-wrapper -->

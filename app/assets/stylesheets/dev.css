@@ -34,6 +34,9 @@
 .dataTables_info {
   display: none;
 }
+.form-control {
+    border: 2px solid #E6E6E6;
+}
 /*.logo-simple img {
   margin-top: -9px;
 }*/
